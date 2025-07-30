@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sr">
+    {%load static%}
+<head>
+    <meta charset="UTF-8" />
+    <title>Unit converter</title>
+    <link rel="stylesheet" href="{% static 'new_app/style.css' %}">
+
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color:#333">
+        <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'konverter' %}">Units converter</a>
+            <a href="{% url 'sample' %}">Sample</a>
+        </nav>
+    </header>
+
+
+
+
+    <h1>Units converter</h1>
+    <form method="post" action="{% url 'konverter' %}">
+        {% csrf_token %}
+        <label for="value">Enter a value:</label>
+        <input type="number" step="any" id="value" name="value" required />
+
+        <label for="from_unit">From:</label>
+        <select id="from_unit" name="from_unit" required>
+            <option value="cm">Centimeters</option>
+            <option value="m">Meters</option>
+            <option value="mm">Milimeters</option>
+
+        </select>
+
+        <label for="to_unit">To:</label>
+        <select id="to_unit" name="to_unit" required>
+            <option value="cm">Centimeters</option>
+            <option value="m">Meters</option>
+            <option value="mm">Milimeters</option>
+
+        </select>
+
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if result is not None %}
+        <div class="result">
+            Result: {{ result }}
+        </div>
+    {% endif %}
+</body>
+</html>

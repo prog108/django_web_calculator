@@ -1,0 +1,90 @@
+/* style.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Osnovni stilovi za zaglavlje */
+body {
+background-color: 'yellow';
+}
+
+header {
+    background-color: #333;
+    padding: 15px;
+}
+
+/* Stil za navigacijsku traku */
+nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Stil za linkove */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efekt na hover */
+nav a:hover {
+    background-color: #575757;
+    color: #ffd700;
+}
+
+/* Stil za glavni sadržaj */
+main {
+    padding: 20px;
+}
+
+/*-----------------------------------------------------------------------------*/
+/*CALCULATOR PART*/
+/*-----------------------------------------------------------------------------*/
+
+.kalkulator-class {
+    display: grid;
+    grid-template-rows: auto 1fr; /* prvi red za naslov, a drugi za gumbi */
+    gap: 7px;
+    max-width: 400px; /* maksimalna širina okvira, po želji */
+    margin: 0 auto; /* centriranje okvira */
+    padding: 10px;
+    border: 2px solid #333;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+    height: 70vh;
+
+}
+
+
+#display {
+    grid-column: 1 / -1; /* Display will be spread over the whole row */
+    font-size: clamp(12px, 5vw, 64px);    padding: 5px;
+    border: 1px solid #000;
+    background-color: #fff;
+    text-align: right;
+    height:10vh;
+}
+
+.gumbi {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns, same width */
+    gap: 10px;
+    width: 100%;
+    height: 47h;
+}
+
+.gumbi button {
+    width: 100%;
+    height: 80%;
+    font-size: 1.2em;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/*-----------------------------------------------------------------------------*/

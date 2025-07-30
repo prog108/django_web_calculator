@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><!--naročito važno za SEO-->
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Moja Prva Stranica</title>
+    <link rel="stylesheet" href="{% static 'new_app/style.css' %}">
+    <script src="{% static 'js/kalkulator.js' %}"></script>
+</head>
+<body>
+    <header style="background-color:#333">
+        <nav>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'konverter' %}">Units converter</a>
+            <a href="{% url 'sample' %}">Sample</a>
+        </nav>
+    </header>
+
+    <div id="kalkulator-container" class="kalkulator-class">
+    <!-- Calculator content -->
+
+        <div id="display" >
+            0
+        </div>
+        <div class="gumbi">
+            <!-- NUmbers and other buttons -->
+            <button class="broj" data-value="7">7</button>
+            <button class="broj" data-value="8">8</button>
+            <button class="broj" data-value="9">9</button>
+            <button class="operator" data-op="/">/</button>
+            
+            <button class="broj" data-value="4">4</button>
+            <button class="broj" data-value="5">5</button>
+            <button class="broj" data-value="6">6</button>
+            <button class="operator" data-op="*">*</button>
+            <button class="broj" data-value="1">1</button>
+            <button class="broj" data-value="2">2</button>
+            <button class="broj" data-value="3">3</button>
+            <button class="operator" data-op="-">-</button>
+            <button class="broj" data-value="0">0</button>
+            <button id="decimal">.</button>
+            <button id="equals">=</button>
+            <button class="operator" data-op="+">+</button>
+            <br>
+            <!-- Clear button. Place for adding new buttons -->
+            <button id="clear">C</button>
+        </div>
+
+
+
+    </div>
+
+    <main>
+        <!-- Place to upgrade the project once... -->
+        <div id="new_content">
+        </div>
+    </main>
+
+
+
+</body>
+</html>
